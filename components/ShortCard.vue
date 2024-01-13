@@ -1,66 +1,92 @@
 <script setup lang="ts">
-import { appName } from '~/constants'
-
-useHead({
-  title: appName,
-})
-
-// @ts-expect-error right
-function updateCursor({ x, y }) {
-  document.documentElement.style.setProperty('--x', x)
-  document.documentElement.style.setProperty('--y', y)
-}
-
-onMounted(() => {
-  document.body.addEventListener('pointermove', updateCursor)
+const props = defineProps({
+  cover: {
+    type: String,
+    required: false,
+    default: '',
+  },
+  title: {
+    type: String,
+    required: false,
+    default: 'untitled',
+  },
+  description: {
+    type: String,
+    required: false,
+    default: '',
+  },
+  tags: {
+    type: Array,
+    required: false,
+  },
+  path: {
+    type: String,
+    required: true,
+    default: '/',
+  },
+  views: {
+    type: Number,
+    required: false,
+    default: 0,
+  },
+  date: {
+    type: String,
+    required: false,
+    default: '',
+  },
 })
 </script>
 
 <template>
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
+  <div
+    class="card-bg-filter card-border short-card"
+    @click="$router.push(props.path)"
+  >
+    <div class="p-4 text-left">
+      <div class="text-lg font-bold">
+        {{ props.title }}
+      </div>
+      <div class="mt-2">
+        <UBadge
+          v-for="t in props.tags" :key="t" color="gray" variant="solid" class="my-1 mr-1 opacity-90"
+          :tag="t"
+        >
+          {{ t }}
+        </UBadge>
+      </div>
+      <div class="mt-3 text-sm">
+        {{ props.date }}
+      </div>
+    </div>
+  </div>
 </template>
 
-<style>
-html,
-body,
-#__nuxt {
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-}
-
-html.dark {
-  background: #222;
-  color: white;
-}
-
-.card {
+<style scoped>
+.short-card {
   position: relative;
   transition: all 0.1s;
   border-radius: 0.25rem;
   box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.05);
 }
 
-.dark .card {
+.dark .short-card {
   box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.05);
 }
 
-.card:hover {
+.short-card:hover {
   --active: 1;
   box-shadow: inset 0 0 0 2px rgb(167, 139, 250, 0.85);
   z-index: 100;
 }
 
-.card:after {
+.short-card:after {
   content: '';
   position: absolute;
   inset: 0;
   background: radial-gradient(
     circle at calc(var(--x) * 1px) calc(var(--y) * 1px),
     hsl(0 0% 100% / 0.15),
-    transparent 40vmin
+    transparent 25vmin
   );
   background-attachment: fixed;
   opacity: var(--active, 0);
@@ -69,14 +95,14 @@ html.dark {
   border-radius: 0.25rem;
 }
 
-.card:before {
+.short-card:before {
   content: '';
   position: absolute;
   inset: 0;
   background: radial-gradient(
       circle at calc(var(--x) * 1px) calc(var(--y) * 1px),
       rgb(167, 139, 250, 1),
-      transparent 40vmin
+      transparent 25vmin
     ),
     transparent;
   background-attachment: fixed;

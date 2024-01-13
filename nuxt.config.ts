@@ -7,8 +7,22 @@ export default defineNuxtConfig({
     '@unocss/nuxt',
     '@pinia/nuxt',
     '@nuxtjs/color-mode',
-    '@vite-pwa/nuxt',
+    '@nuxt/content',
   ],
+
+  content: {
+    highlight: {
+      // Theme used in all color schemes.
+      theme: {
+        // Default theme (same as single string)
+        default: 'github-light',
+        // Theme used if `html.dark`
+        dark: 'github-dark',
+        // Theme used if `html.sepia`
+        sepia: 'monokai',
+      },
+    },
+  },
 
   experimental: {
     // when using generate, payload js assets included in sw precache manifest
@@ -33,11 +47,11 @@ export default defineNuxtConfig({
         target: 'esnext',
       },
     },
-    prerender: {
-      crawlLinks: false,
-      routes: ['/'],
-      ignore: ['/hi'],
-    },
+    // prerender: {
+    //   crawlLinks: false,
+    //   routes: ['/'],
+    //   ignore: ['/hi'],
+    // },
   },
 
   app: {
@@ -55,8 +69,6 @@ export default defineNuxtConfig({
       ],
     },
   },
-
-  pwa,
 
   devtools: {
     enabled: true,
