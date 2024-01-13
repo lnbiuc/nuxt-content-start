@@ -1,14 +1,4 @@
 <script setup lang="ts">
-definePageMeta({
-  documentDriven: {
-    // Simple Path
-    // Rich Query
-    // surround: {
-    //   _path: '/article',
-    // },
-  },
-})
-
 const {
   page,
 } = useContent()

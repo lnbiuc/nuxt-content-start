@@ -14,21 +14,21 @@ const { styles } = useFixedHeader(headerRef)
       <div class="w-full flex flex-row items-center justify-center">
         <div class="w-[70%] flex justify-center">
           <ul class="flex flex-row py-2">
-            <NuxtLink class="header-link" to="/">
+            <span class="header-link" @click="$router.push('/')">
               Home
-            </NuxtLink>
-            <NuxtLink class="header-link" to="/blog">
+            </span>
+            <span class="header-link" @click="$router.push('/blog')">
               Blog
-            </NuxtLink>
-            <NuxtLink class="header-link" to="/shorts">
+            </span>
+            <span class="header-link" @click="$router.push('/shorts')">
               Shorts
-            </NuxtLink>
-            <NuxtLink class="header-link" to="/project">
+            </span>
+            <span class="header-link" @click="$router.push('/project')">
               Project
-            </NuxtLink>
-            <NuxtLink class="header-link" to="/about">
+            </span>
+            <span class="header-link" @click="$router.push('/about')">
               About
-            </NuxtLink>
+            </span>
           </ul>
         </div>
         <div v-if="width > 767" class="w-[30%] flex justify-center">

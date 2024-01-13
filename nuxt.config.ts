@@ -1,4 +1,3 @@
-import { pwa } from './config/pwa'
 import { appDescription } from './constants/index'
 
 export default defineNuxtConfig({
@@ -9,7 +8,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxt/content',
   ],
-
+  ssr: true,
   content: {
     documentDriven: true,
     markdown: {
@@ -28,6 +27,9 @@ export default defineNuxtConfig({
         // Theme used if `html.sepia`
         sepia: 'monokai',
       },
+    },
+    experimental: {
+      clientDB: true,
     },
   },
 
@@ -53,6 +55,12 @@ export default defineNuxtConfig({
       options: {
         target: 'esnext',
       },
+    },
+    prerender: {
+      // https://github.com/nuxt-themes/docus/issues/944#issuecomment-1634580369
+      concurrency: 1,
+      // https://github.com/nuxt-themes/docus/issues/944#issuecomment-1634798275
+      failOnError: false,
     },
     // prerender: {
     //   crawlLinks: false,

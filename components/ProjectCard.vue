@@ -59,7 +59,7 @@ function openNewTab(url: string) {
         {{ props.description }}
       </div>
       <div>
-        <span v-for="s in props.tags" :key="s" color="gray" variant="solid" class="my-2 mr-2">
+        <span v-for="(s, index) in props.tags" :key="index" color="gray" variant="solid" class="my-2 mr-2">
           {{ s }}
         </span>
       </div>
