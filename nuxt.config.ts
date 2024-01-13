@@ -11,6 +11,13 @@ export default defineNuxtConfig({
   ],
 
   content: {
+    documentDriven: true,
+    markdown: {
+      toc: {
+        depth: 2,
+        searchDepth: 3,
+      },
+    },
     highlight: {
       // Theme used in all color schemes.
       theme: {
@@ -55,17 +62,24 @@ export default defineNuxtConfig({
   },
 
   app: {
+    pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       viewport: 'width=device-width,initial-scale=1',
       link: [
         { rel: 'icon', href: '/favicon.ico', sizes: 'any' },
         { rel: 'icon', type: 'image/svg+xml', href: '/nuxt.svg' },
         { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
+        { rel: 'stylesheet', href: '//unpkg.com/heti/umd/heti.min.css' },
       ],
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'description', content: appDescription },
         { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
+      ],
+      // umami analytics
+      script: [
+        // <script async src="https://analytics.eu.umami.is/script.js" data-website-id="afdca035-1988-40f8-89a0-e9ed73267348"></script>
+        { 'async': true, 'src': 'https://analytics.eu.umami.is/script.js', 'data-website-id': 'afdca035-1988-40f8-89a0-e9ed73267348' },
       ],
     },
   },

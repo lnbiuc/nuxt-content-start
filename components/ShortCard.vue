@@ -39,7 +39,7 @@ const props = defineProps({
 
 <template>
   <div
-    class="card-bg-filter card-border short-card"
+    class="card-bg-filter short-card card-border"
     @click="$router.push(props.path)"
   >
     <div class="p-4 text-left">
@@ -47,12 +47,11 @@ const props = defineProps({
         {{ props.title }}
       </div>
       <div class="mt-2">
-        <UBadge
-          v-for="t in props.tags" :key="t" color="gray" variant="solid" class="my-1 mr-1 opacity-90"
-          :tag="t"
+        <span
+          v-for="(t, index) in props.tags" :key="index" color="gray" variant="solid" class="my-1 mr-1 opacity-90"
         >
           {{ t }}
-        </UBadge>
+        </span>
       </div>
       <div class="mt-3 text-sm">
         {{ props.date }}

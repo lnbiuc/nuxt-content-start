@@ -39,15 +39,15 @@ const props = defineProps({
 
 <template>
   <div
-    class="card-bg-filter card-border card overflow-hidden"
+    class="card-bg-filter card overflow-hidden card-border"
     @click="$router.push(props.path)"
   >
     <div class="relative overflow-hidden p-[3px]">
       <img :src="props.cover" alt="cover" class="z-0 h-48 w-full transform rounded-tl-sm rounded-tr-sm object-cover">
-      <div class="absolute bottom-0 right-0 p-1 text-right">
-        <UBadge v-for="t in props.tags" :key="t" color="gray" variant="solid" class="m-1 opacity-90" :tag="t">
+      <div class="absolute bottom-0 right-0 flex flex-row p-1 text-right">
+        <MyTag v-for="(t, index) in props.tags" :key="index" color="gray" variant="solid" class="m-1 opacity-90">
           {{ t }}
-        </UBadge>
+        </MyTag>
       </div>
     </div>
 
@@ -56,8 +56,7 @@ const props = defineProps({
         {{ props.title }}
       </div>
       <div class="my-2 flex flex-row items-center">
-        <div class="i-carbon-view text-violet" />
-        <div class="ml-2 text-violet">
+        <div class="text-violet">
           {{ props.views }} views
         </div>
       </div>

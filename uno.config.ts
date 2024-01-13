@@ -8,6 +8,10 @@ import {
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
+import { presetHeroPatterns } from '@julr/unocss-preset-heropatterns'
+import { presetScrollbar } from 'unocss-preset-scrollbar'
+import presetChinese, { chineseTypography } from 'unocss-preset-chinese'
+import presetEase from 'unocss-preset-ease'
 
 export default defineConfig({
   shortcuts: [
@@ -27,6 +31,11 @@ export default defineConfig({
       scale: 1.2,
     }),
     presetTypography(),
+    // chineseTypography(),
+    // presetChinese({
+    //   chineseType: 'simplified',
+    // }),
+    presetEase(),
     presetWebFonts({
       fonts: {
         sans: 'DM Sans',
@@ -34,6 +43,8 @@ export default defineConfig({
         mono: 'DM Mono',
       },
     }),
+    // presetHeroPatterns(),
+    presetScrollbar(),
   ],
   transformers: [
     transformerDirectives(),

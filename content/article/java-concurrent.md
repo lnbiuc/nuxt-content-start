@@ -3,7 +3,7 @@ navigation:
   title: 'Java并发编程'
   description: 'Java中进程、线程、线程生命周期、创建、同步、调度等问题'
   date: '2023-11-20'
-  cover: 'https://r2-img.lnbiuc.com/blog/2023/11/768f8d32b8963a6587093ffeca4cacbc.png'
+  cover: 'https://r2-img.lnbiuc.com/blog/2024/01/2eca8d876d3d8fc798ff31dedacf6229.png'
   tags: ['java']
   views: '32'
 ---

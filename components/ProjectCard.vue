@@ -48,7 +48,7 @@ function openNewTab(url: string) {
 
 <template>
   <div
-    class="card-bg-filter card-border card flex flex-col justify-between overflow-hidden"
+    class="card-bg-filter card flex flex-col justify-between overflow-hidden card-border"
     @click="openNewTab(props.link)"
   >
     <div class="p-4 text-left">
@@ -59,9 +59,9 @@ function openNewTab(url: string) {
         {{ props.description }}
       </div>
       <div>
-        <UBadge v-for="s in props.tags" :key="s" color="gray" variant="solid" class="my-2 mr-2">
+        <span v-for="s in props.tags" :key="s" color="gray" variant="solid" class="my-2 mr-2">
           {{ s }}
-        </UBadge>
+        </span>
       </div>
     </div>
     <div class="relative px-4 pb-4">
