@@ -4,9 +4,9 @@ import { useActiveScroll } from 'vue-use-active-scroll'
 const { toc } = useContent()
 
 const targets = computed(() =>
-  toc.value.links.flatMap(({ id, children = [] }) => [
-    id,
-    ...children.map(({ id }) => id),
+  toc.value.links.flatMap(({ id = '', children = [] }) => [
+    id as string,
+    ...children.map(({ id }) => id as string),
   ]),
 )
 
@@ -17,7 +17,7 @@ onMounted(() => (isSSR.value = false))
 </script>
 
 <template>
-  <aside class="max-w-[300px]">
+  <aside class="max-w-[300px] min-w-[150px] text-sm">
     <nav>
       <ul>
         <li v-for="(link, idx) in toc.links" :key="link.id">
@@ -25,7 +25,8 @@ onMounted(() => (isSSR.value = false))
             :to="{ hash: `#${link.id}` }"
             :class="{
               ActiveLink: (isSSR && idx === 0) || activeId === link.id,
-              ParentActive: link.children?.some(({ id }) => id === activeId), // If any nested child is active
+              //@ts-expect-error fixed
+              ParentActive: link.children?.some(({ id }) => id === activeId),
             }"
             @click="setActive(link.id)"
           >

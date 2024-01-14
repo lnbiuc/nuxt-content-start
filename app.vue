@@ -17,9 +17,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <NuxtLayout>
+  <Header />
+  <main class="w-full px-5">
     <NuxtPage />
-  </NuxtLayout>
+    <div class="mx-auto mt-5 text-center text-sm opacity-25">
+      [Default Layout]
+    </div>
+  </main>
 </template>
 
 <style>
@@ -88,5 +92,12 @@ html.dark {
     linear-gradient(white, white) 100% 50% / 2px 100% no-repeat;
   z-index: 100;
   border-radius: 0.25rem;
+}
+
+.light .github-light {
+  background-color: #ddd !important;
+}
+.dark .github-dark {
+  background-color: #111 !important;
 }
 </style>

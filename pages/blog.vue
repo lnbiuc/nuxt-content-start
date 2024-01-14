@@ -1,6 +1,6 @@
 <template>
-  <NuxtLayout name="home">
-    <nav>
+  <main class="flex flex-col items-center pt-4 text-center lg:pt-5 md:pt-6 sm:pt-6 xl:pt-10">
+    <div class="w-full lg:w-[80%] md:w-full sm:w-full xl:max-w-[1100px] xl:w-[80%]">
       <ContentNavigation v-slot="{ navigation }">
         <div v-for="link of navigation" :key="link._path">
           <div v-if="link._path === '/article' && link.children">
@@ -21,6 +21,9 @@
           </div>
         </div>
       </ContentNavigation>
-    </nav>
-  </NuxtLayout>
+    </div>
+    <!-- <div class="mx-auto mt-5 text-center text-sm opacity-25">
+      [Home Layout]
+    </div> -->
+  </main>
 </template>

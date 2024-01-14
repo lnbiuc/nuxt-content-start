@@ -28,9 +28,9 @@ export default defineNuxtConfig({
         sepia: 'monokai',
       },
     },
-    experimental: {
-      clientDB: true,
-    },
+    // experimental: {
+    //   clientDB: true,
+    // },
   },
 
   experimental: {

@@ -24,17 +24,21 @@ const props = defineProps({
     required: true,
     default: '/',
   },
-  views: {
-    type: Number,
-    required: false,
-    default: 0,
-  },
   date: {
     type: String,
     required: false,
     default: '',
   },
 })
+
+function getReadableDate(dateString: string) {
+  const date = new Date(dateString)
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  })
+}
 </script>
 
 <template>
@@ -54,7 +58,7 @@ const props = defineProps({
         </span>
       </div>
       <div class="mt-3 text-sm">
-        {{ props.date }}
+        {{ getReadableDate(props.date) }}
       </div>
     </div>
   </div>
