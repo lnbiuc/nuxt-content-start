@@ -52,6 +52,9 @@ SSR的优势是直接返回前端完整的页面，即HTML文件，CDN可以缓�
 - 自定义：整个项目就是一个Nuxt项目，在使用Nuxt Content提供的功能之上还可以使用任何你需要的技术。
 - 扩展性：对mdx的支持和新增的语法，可以直接在md中调用已经编写好的组件，需要什么样式完全可以自己写，需要在md中插入视频，卡片都可以自定义。
 
+![实时预览](https://r2-img.lnbiuc.com/blog/2024/01/1c781b8db582d08310cabec71bed07c9.png)
+
+
 ## 构建项目
 
 在我发先这么好用的工具之后，没有拖延，立刻开始新建项目，将之前的文章新写一个接口导出。将已有网站的样式复制到新项目中。很快，仅仅三四个小时我便完成了最初版。
@@ -66,7 +69,7 @@ SSR的优势是直接返回前端完整的页面，即HTML文件，CDN可以缓�
 
 我遇到的第一个问题是，Nuxt Content使用的，通过文章生成目录的组件居然是收费购买的，OK，到这里没什么，价格不贵我愿意买，当时对项目的支持。然而当我看到价格时，199，刀。按照现在的汇率7.11，这个UI框架的几个组件居然卖到了1415.01元，我明白这歌价格中不止包含了开发的费用，然而这极大的超过了我的承受能力，如果是199，我可能会支持下。
 
-![](https://r2-img.lnbiuc.com/blog/2024/01/aaa15564ecb1ab4e7a739ba12c96d161.png)
+![199刀？](https://r2-img.lnbiuc.com/blog/2024/01/aaa15564ecb1ab4e7a739ba12c96d161.png)
 
 ### H1不生成目录
 
@@ -74,7 +77,7 @@ SSR的优势是直接返回前端完整的页面，即HTML文件，CDN可以缓�
 
 [https://github.com/nuxt/content/issues/1791#issuecomment-1425731336](https://github.com/nuxt/content/issues/1791#issuecomment-1425731336)
 
-![](https://r2-img.lnbiuc.com/blog/2024/01/d81184f8b47100400fbee0f3cdada5e6.png)
+![我不理解](https://r2-img.lnbiuc.com/blog/2024/01/d81184f8b47100400fbee0f3cdada5e6.png)
 
 ### Nuxt Generate报错
 
@@ -98,7 +101,7 @@ export default defineNuxtConfig({
 })
 ```
 
-![](https://r2-img.lnbiuc.com/blog/2024/01/00ff9b9542b56c20aee07851789295f1.png)
+![自我欺骗](https://r2-img.lnbiuc.com/blog/2024/01/00ff9b9542b56c20aee07851789295f1.png)
 
 ### 客户端渲染失效
 
