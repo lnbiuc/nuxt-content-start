@@ -10,7 +10,7 @@ const theme = computed(() => {
 
 <template>
   <MyGiscus
-    :theme="theme" category="Announcements" category-id="DIC_kwDOKsLYcc4CbAW9" class="mt-4 py-4"
+    :theme="theme" category="Announcements" category-id="DIC_kwDOKsLYcc4CbAW9" class=""
     crossorigin="anonymous" emit-metadata="0" input-position="top" lang="en"
     mapping="pathname" reactions-enabled="1" repo="lnbiuc/blog-next-view" repo-id="R_kgDOKsLYcQ" strict="1"
     term="Welcome to @giscus/vue component!"

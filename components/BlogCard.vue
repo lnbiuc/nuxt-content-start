@@ -62,7 +62,7 @@ function getReadableDate(dateString: string) {
       <div class="mt-1 text-violet font-bold">
         {{ getReadableDate(props.date) }}
       </div>
-      <div class="mt-2">
+      <div class="mt-2 text-sm">
         {{ props.description }}
       </div>
     </div>

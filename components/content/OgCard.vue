@@ -28,7 +28,7 @@ function openNewTab(slot: string | undefined) {
     <slot />
   </div>
 
-  <div v-if="content" class="my-4 w-full flex flex-row justify-center overflow-hidden" @click="openNewTab(slot)">
+  <div v-if="content" class="my-6 w-full flex flex-row justify-center overflow-hidden" @click="openNewTab(slot)">
     <div class="card-bg-filter card overflow-hidden rounded p-2 card-border lg:w-[500px] md:w-full sm:w-full xl:w-[500px]">
       <img
         v-if="content?.hybridGraph.image" :src="content?.hybridGraph.image" alt="cover"

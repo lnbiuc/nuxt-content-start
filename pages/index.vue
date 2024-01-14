@@ -1,5 +1,31 @@
 <script setup lang="ts">
 const online = useOnline()
+
+definePageMeta({
+  title: '',
+})
+
+useSeoMeta({
+  ogImage: '/og.png',
+  twitterTitle: '薇尔薇',
+  twitterDescription: '薇尔薇 is A Web Developer 🖥. Code for Fun.',
+  twitterImage: '/og.png',
+  twitterCard: 'summary_large_image',
+})
+
+useHead({
+  htmlAttrs: {
+    lang: 'en',
+  },
+  link: [
+    {
+      rel: 'icon',
+      type: 'image/png',
+      href: '/favicon.png',
+    },
+  ],
+  titleTemplate: '%siteName',
+})
 </script>
 
 <template>

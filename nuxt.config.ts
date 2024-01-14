@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxt/content',
     '@nuxthq/studio',
+    '@nuxtjs/seo',
   ],
   ssr: true,
   content: {
@@ -33,12 +34,45 @@ export default defineNuxtConfig({
     //   clientDB: true,
     // },
   },
+  robots: {
+    disallow: ['/secret', '/admin'],
+  },
+  sitemap: {
+    strictNuxtContentPaths: true,
+  },
+  ogImage: {
+    componentOptions: {
+      global: true,
+    },
+  },
+  colorMode: {
+    preference: 'system',
+    fallback: 'dark', // will render in light mode
+    classSuffix: '',
+  },
+  linkChecker: { enabled: false },
+
+  site: {
+    url: 'https://vio.vin',
+    name: '薇尔薇',
+    description: 'A Web Developer. Code for Fun. AKA ZZSLL, Violet, Vio, VioVin, Lnbiuc, kunkida, hi@lnbiuc.com',
+    defaultLocale: 'en',
+    identity: {
+      type: 'Person',
+    },
+    github: 'lnbiuc',
+    email: 'hi@lnbiuc.com',
+    trailingSlash: true,
+    twitterCard: 'summary_large_image',
+    twitterSite: '@ZZSLL_53387',
+    twitterCreator: '@ZZSLL_53387',
+    twitterImage: '/og.png',
+  },
 
   experimental: {
     // when using generate, payload js assets included in sw precache manifest
     // but missing on offline, disabling extraction it until fixed
     payloadExtraction: false,
-    inlineSSRStyles: false,
     renderJsonPayloads: true,
     typedPages: true,
   },
@@ -46,10 +80,6 @@ export default defineNuxtConfig({
   css: [
     '@unocss/reset/tailwind.css',
   ],
-
-  colorMode: {
-    classSuffix: '',
-  },
 
   nitro: {
     esbuild: {
@@ -76,9 +106,7 @@ export default defineNuxtConfig({
       viewport: 'width=device-width,initial-scale=1',
       link: [
         { rel: 'icon', href: '/favicon.ico', sizes: 'any' },
-        { rel: 'icon', type: 'image/svg+xml', href: '/nuxt.svg' },
-        { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
-        { rel: 'stylesheet', href: '//unpkg.com/heti/umd/heti.min.css' },
+        { rel: 'apple-touch-icon', href: '/favicon.ico' },
       ],
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -90,6 +118,7 @@ export default defineNuxtConfig({
         // <script async src="https://analytics.eu.umami.is/script.js" data-website-id="afdca035-1988-40f8-89a0-e9ed73267348"></script>
         { 'async': true, 'src': 'https://analytics.eu.umami.is/script.js', 'data-website-id': 'afdca035-1988-40f8-89a0-e9ed73267348' },
       ],
+      titleTemplate: '%s %separator %siteName',
     },
   },
 

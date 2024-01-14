@@ -1,6 +1,33 @@
 <script setup lang="ts">
 const { data } = await useAsyncData('page-data', () => queryContent('/about').findOne())
 const page = data.value as unknown as Record<string, any>
+
+definePageMeta({
+  title: 'About',
+})
+
+useSeoMeta({
+  ogImage: '/og.png',
+  twitterTitle: '薇尔薇｜About',
+  twitterDescription: '薇尔薇 is A Web Developer 🖥. Code for Fun.',
+  twitterImage: '/og.png',
+  twitterCard: 'summary_large_image',
+})
+
+useHead({
+  htmlAttrs: {
+    lang: 'en',
+  },
+  link: [
+    {
+      rel: 'icon',
+      type: 'image/png',
+      href: '/favicon.png',
+    },
+  ],
+  title: 'About',
+  titleTemplate: '%s %separator %separator %siteName',
+})
 </script>
 
 <template>
