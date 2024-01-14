@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxtjs/color-mode',
     '@nuxt/content',
+    '@nuxthq/studio',
   ],
   ssr: true,
   content: {
