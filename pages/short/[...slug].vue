@@ -14,7 +14,7 @@ const { width } = useWindowSize()
         <Transition name="fade">
           <img
             v-if="page.navigation.cover" :src="page.navigation.cover" alt="cover"
-            class="z-10 aspect-[2.5/1] w-full rounded-lg object-cover"
+            class="z-10 aspect-[16/9] w-full rounded-lg object-cover"
           >
         </Transition>
         <div class="my-6 text-4xl font-bold">
