@@ -103,7 +103,8 @@ export default defineNuxtConfig({
     // },
     prerender: {
       routes: [
-        '/short',
+        '/',
+        '/shorts',
         '/blog',
         '/project',
         '/about',
