@@ -6,7 +6,7 @@
 //   prev,
 // } = useContent()
 
-const { width } = useWindowSize()
+// const { width } = useWindowSize()
 
 function getReadableDate(dateString: string) {
   const date = new Date(dateString)
@@ -40,7 +40,7 @@ defineOgImageComponent('Wave', {
   colorMode: 'dark',
 })
 
-const toc = ref(page.value?.body?.toc as any)
+// const toc = ref(page.value?.body?.toc as any)
 const pageContent = ref(page as any)
 
 useSeoMeta({
@@ -86,12 +86,12 @@ useHead({
         </div>
         <UDivider class="my-6" />
       </div>
-      <div :class="{ Container: toc.links.length > 0 && width > 767 }" class="prose-img:rounded-xl prose-headings:underline prose-a:text-blue-600 w-full flex flex-row prose light:prose-zinc dark:prose-invert" style="max-width: unset;">
-        <div class="lg:w-80% md:w-full sm:w-full xl:w-80%">
-          <ContentRenderer :key="page?._id" :value="pageContent" />
-        </div>
-        <Slidebar v-if="toc.links.length > 0 && width > 767" class="ml-5 w-20%" />
+      <!-- <div :class="{ Container: toc.links.length > 0 && width > 767 }" class="prose-img:rounded-xl prose-headings:underline prose-a:text-blue-600 w-full flex flex-row prose light:prose-zinc dark:prose-invert" style="max-width: unset;"> -->
+      <div class="max-w-screen w-full prose dark:prose-invert">
+        <ContentRenderer :key="page?._id" :value="pageContent" />
       </div>
+      <!-- <Slidebar v-if="toc.links.length > 0 && width > 767" class="ml-5 w-20%" /> -->
+      <!-- </div> -->
       <!-- <PrevAndNext
         :prev-title="prev.navigation ? prev.navigation.title : ''"
         :prev-path="prev._path ? prev._path : ''"

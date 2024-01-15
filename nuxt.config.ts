@@ -12,7 +12,7 @@ export default defineNuxtConfig({
   ],
   ssr: true,
   content: {
-    documentDriven: true,
+    // documentDriven: true,
     markdown: {
       toc: {
         depth: 2,
