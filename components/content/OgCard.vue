@@ -11,7 +11,7 @@ const requested = ref(false)
 
 const content = ref()
 async function fetchWithDelay() {
-  const result = await useFetch(`https://blog-api.vio.vin/api/v1/links/meta?url=${props.url}`).data.value
+  const result = await useLazyFetch(`https://blog-api.vio.vin/api/v1/links/meta?url=${props.url}`).data.value
   // @ts-expect-error fuck ts
   content.value = JSON.parse(result)
   setTimeout(() => {

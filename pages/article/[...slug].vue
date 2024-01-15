@@ -23,22 +23,33 @@ const { data: page } = await useAsyncData(`docs-${route.path}`, () => queryConte
 if (!page.value)
   throw createError({ statusCode: 404, statusMessage: 'Page not found' })
 
-// const { data: surround } = await useAsyncData(`docs-${route.path}-surround`, () => queryContent()
-//   .only(['_path', 'title', 'navigation', 'description'])
-//   .where({ _extension: 'md', navigation: { $ne: false } })
-//   .findSurround(route.path.endsWith('/') ? route.path.slice(0, -1) : route.path))
+// const { data: surround } = await useAsyncData(`docs-${route.path}-surround`, () => {
+//   return queryContent()
+//     .where({ _extension: 'md', navigation: { $ne: false } })
+//     .findSurround(route.path.endsWith('/') ? route.path.slice(0, -1) : route.path)
+// }, {
+//   transform(surround) {
+//     return surround.map(doc => doc.navigation === false ? null : doc)
+//   },
+// })
 
 useSeoMeta({
   title: () => page.value?.navigation.title,
   description: () => page.value?.navigation.description,
 })
 
-defineOgImageComponent('Wave', {
-  title: page.value?.navigation.title,
-  //   description: page.value?.navigation?.description,
-  theme: '#a78bfa',
-  colorMode: 'dark',
-})
+// defineOgImage({
+//   component: 'Wave',
+//   url: `https://vio.vin/${page.value?._path}`,
+//   width: 1200,
+//   height: 600,
+// })
+
+// defineOgImage({
+//   component: 'OgImageDocs',
+//   title: page.value.navigation.title,
+//   description: page.value.description,
+// })
 
 // const toc = ref(page.value?.body?.toc as any)
 const pageContent = ref(page as any)

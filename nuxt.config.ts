@@ -30,9 +30,9 @@ export default defineNuxtConfig({
         sepia: 'monokai',
       },
     },
-    // api: {
-    //   baseURL: '/_api/content',
-    // },
+    api: {
+      baseURL: '/_api/content',
+    },
     // experimental: {
     //   clientDB: true,
     // },
@@ -102,6 +102,16 @@ export default defineNuxtConfig({
     //   routes: ['/'],
     //   ignore: ['/hi'],
     // },
+    prerender: {
+      routes: [
+        '/short',
+        '/blog',
+        '/project',
+        '/about',
+        '/short/bos-plugin-template',
+        '/article/use-nuxt-content',
+      ],
+    },
   },
 
   app: {
@@ -129,4 +139,16 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true,
   },
+
+//   hooks: {
+//     // Related to https://github.com/nuxt/nuxt/pull/22558
+//     // Adding all global components to the main entry
+//     // To avoid lagging during page navigation on client-side
+//     'components:extend': function (components) {
+//       for (const comp of components) {
+//         if (comp.global)
+//           comp.global = 'sync'
+//       }
+//     },
+//   },
 })
