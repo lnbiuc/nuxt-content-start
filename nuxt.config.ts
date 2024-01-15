@@ -69,7 +69,6 @@ export default defineNuxtConfig({
     twitterCard: 'summary_large_image',
     twitterSite: '@ZZSLL_53387',
     twitterCreator: '@ZZSLL_53387',
-    twitterImage: '/og.png',
   },
 
   experimental: {
@@ -130,7 +129,7 @@ export default defineNuxtConfig({
       // umami analytics
       script: [
         // <script async src="https://analytics.eu.umami.is/script.js" data-website-id="afdca035-1988-40f8-89a0-e9ed73267348"></script>
-        { 'async': true, 'src': 'https://analytics.eu.umami.is/script.js', 'data-website-id': 'afdca035-1988-40f8-89a0-e9ed73267348' },
+        // { 'async': true, 'src': 'https://analytics.eu.umami.is/script.js', 'data-website-id': 'afdca035-1988-40f8-89a0-e9ed73267348' },
       ],
       titleTemplate: '%s %separator %siteName',
     },
@@ -140,15 +139,15 @@ export default defineNuxtConfig({
     enabled: true,
   },
 
-//   hooks: {
-//     // Related to https://github.com/nuxt/nuxt/pull/22558
-//     // Adding all global components to the main entry
-//     // To avoid lagging during page navigation on client-side
-//     'components:extend': function (components) {
-//       for (const comp of components) {
-//         if (comp.global)
-//           comp.global = 'sync'
-//       }
-//     },
-//   },
+  hooks: {
+    // Related to https://github.com/nuxt/nuxt/pull/22558
+    // Adding all global components to the main entry
+    // To avoid lagging during page navigation on client-side
+    'components:extend': function (components) {
+      for (const comp of components) {
+        if (comp.global)
+          comp.global = 'sync'
+      }
+    },
+  },
 })
