@@ -13,12 +13,12 @@ export default defineNuxtConfig({
   ssr: true,
   content: {
     // documentDriven: true,
-    markdown: {
-      toc: {
-        depth: 2,
-        searchDepth: 3,
-      },
-    },
+    // markdown: {
+    //   toc: {
+    //     depth: 2,
+    //     searchDepth: 3,
+    //   },
+    // },
     highlight: {
       // Theme used in all color schemes.
       theme: {
@@ -30,6 +30,9 @@ export default defineNuxtConfig({
         sepia: 'monokai',
       },
     },
+    // api: {
+    //   baseURL: '/_api/content',
+    // },
     // experimental: {
     //   clientDB: true,
     // },
@@ -72,9 +75,10 @@ export default defineNuxtConfig({
   experimental: {
     // when using generate, payload js assets included in sw precache manifest
     // but missing on offline, disabling extraction it until fixed
-    payloadExtraction: false,
-    renderJsonPayloads: true,
-    typedPages: true,
+    // payloadExtraction: false,
+    // renderJsonPayloads: true,
+    // typedPages: true,
+    // asyncContext: true,
   },
 
   css: [
